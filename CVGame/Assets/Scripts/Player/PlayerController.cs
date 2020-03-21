@@ -5,6 +5,7 @@ public class PlayerController : MonoBehaviour
 {
     #region Variables
     public LayerMask movementMask;
+    public Interactable focus;
 
     Camera cam;
     PlayerMotor motor;
@@ -20,30 +21,53 @@ public class PlayerController : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             Ray ray = cam.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
 
-            if (Physics.Raycast(ray,out hit, 100, movementMask))
+            if (Physics.Raycast(ray, out RaycastHit hit, 100, movementMask))
             {
                 //Move player to what was hit
                 motor.MoveToPoint(hit.point);
 
                 //Stop focusing any object
+                RemoveFocus();
             }
         }
 
         if (Input.GetMouseButtonDown(1))
         {
             Ray ray = cam.ScreenPointToRay(Input.mousePosition);
-            RaycastHit hit;
 
-            if (Physics.Raycast(ray, out hit, 100))
+            if (Physics.Raycast(ray, out RaycastHit hit, 100))
             {
-                //Check if we hit and interactable
+                Interactable interactable = hit.collider.GetComponent<Interactable>();
 
-                //If we did set it as our focus
+                if (interactable != null)
+                {
+                    SetFocus(interactable);
+                }
 
             }
         }
+    }
+
+    void SetFocus(Interactable newFocus)
+    {
+        if (newFocus != focus)
+        {
+            if (focus != null)
+                focus.OnDeFocused();
+
+            focus = newFocus;
+            motor.FollowTarget(newFocus);
+        }
+        focus.OnFocused(transform);
+    }
+
+    void RemoveFocus()
+    {
+        if (focus != null)
+            focus.OnDeFocused();
+        focus = null;
+        motor.StopFollowingTarget();
     }
 	#endregion
 }
