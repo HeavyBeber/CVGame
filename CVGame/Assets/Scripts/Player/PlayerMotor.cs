@@ -1,4 +1,8 @@
-﻿using UnityEngine;
+﻿/**
+Author : Alexandre Bernard
+**/
+
+using UnityEngine;
 using UnityEngine.AI;
 
 [RequireComponent(typeof(NavMeshAgent))]

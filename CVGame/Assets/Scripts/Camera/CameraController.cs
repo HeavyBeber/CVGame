@@ -1,4 +1,8 @@
-﻿using UnityEngine;
+﻿/**
+Author : Alexandre Bernard
+**/
+
+using UnityEngine;
 
 public class CameraController : MonoBehaviour
 {

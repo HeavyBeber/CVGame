@@ -1,4 +1,8 @@
-﻿using UnityEngine;
+﻿/**
+Author : Alexandre Bernard
+**/
+
+using UnityEngine;
 using UnityEngine.AI;
 
 public class CharacterAnimator : MonoBehaviour

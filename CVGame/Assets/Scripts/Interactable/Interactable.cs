@@ -1,4 +1,8 @@
-﻿using UnityEngine;
+﻿/**
+Author : Alexandre Bernard
+**/
+
+using UnityEngine;
 
 public class Interactable : MonoBehaviour
 {
@@ -48,6 +52,9 @@ public class Interactable : MonoBehaviour
 
 	private void OnDrawGizmosSelected()
 	{
+		if (interactionTransform == null)
+			interactionTransform = transform;
+
 		Gizmos.color = Color.yellow;
 		Gizmos.DrawWireSphere(interactionTransform.position, radius);
 	}
