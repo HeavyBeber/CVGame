@@ -11,6 +11,7 @@ public class InventoryUI : MonoBehaviour
     public Transform itemsParent;
     ItemSlot[] itemSlots;
     public GameObject inventoryUI;
+    public GameObject playerStatsUI;
     #endregion
 
 	#region Unity Methods
@@ -27,6 +28,7 @@ public class InventoryUI : MonoBehaviour
         if (Input.GetButtonDown("Inventory"))
         {
             inventoryUI.SetActive(!inventoryUI.activeSelf);
+            playerStatsUI.SetActive(!playerStatsUI.activeSelf);
         }
     }
 

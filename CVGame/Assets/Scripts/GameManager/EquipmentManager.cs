@@ -23,8 +23,8 @@ public class EquipmentManager : MonoBehaviour
 	Equipment[] equipments;
 	Inventory inventory;
 
-	public delegate void OnEquipmentChange(Equipment newItem, Equipment oldItem);
-	public OnEquipmentChange onEquipmentChange;
+	public delegate void OnEquipmentChanged(Equipment newItem, Equipment oldItem);
+	public OnEquipmentChanged onEquipmentChanged;
 	#endregion
 
 	#region Unity Methods
@@ -47,9 +47,9 @@ public class EquipmentManager : MonoBehaviour
 		
 		equipments[slotIndex] = equipment;
 
-		if (onEquipmentChange != null)
+		if (onEquipmentChanged != null)
 		{
-			onEquipmentChange.Invoke(equipment, oldItem);
+			onEquipmentChanged.Invoke(equipment, oldItem);
 		}
 	}
 
@@ -62,9 +62,9 @@ public class EquipmentManager : MonoBehaviour
 			inventory.Add(equipedItem);
 			equipments[slotIndex] = null;
 
-			if (onEquipmentChange != null)
+			if (onEquipmentChanged != null)
 			{
-				onEquipmentChange.Invoke(null, equipedItem);
+				onEquipmentChanged.Invoke(null, equipedItem);
 			}
 		}
 	}

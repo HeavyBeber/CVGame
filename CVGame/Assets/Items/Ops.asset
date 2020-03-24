@@ -1,0 +1,42 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4df852b69cfc3e14ab7d2291ef5ff07a, type: 3}
+  m_Name: Ops
+  m_EditorClassIdentifier: 
+  name: Ops
+  icon: {fileID: 0}
+  isDefaultItem: 0
+  englishModifier: 0
+  ageOfEmpire2DEModifier: 0
+  javaModifier: 0
+  cSharpModifier: 0
+  unityModifier: 0
+  springModifier: 0
+  testingModifier: 0
+  restModifier: 0
+  angularModifier: 0
+  webLanguagesModifier: 0
+  electronModifier: 0
+  mongoModifier: 0
+  sqlModifier: 0
+  mavenModifier: 0
+  gitModifier: 0
+  dockerModifier: 5
+  atlassianModifier: 0
+  eclipseModifier: 0
+  vsCodeModifier: 0
+  officeModifier: 0
+  adobeModifier: 0
+  blenderModifier: 0
+  agileModifier: 0
+  safeModifier: 0
+  slot: 4
