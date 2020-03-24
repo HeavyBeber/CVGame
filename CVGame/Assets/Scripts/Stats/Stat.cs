@@ -13,12 +13,20 @@ public class Stat
 	[SerializeField]
     private int baseValue = 0;
 	[SerializeField]
-	private StatHolder statHolder;
+	private StatHolder statHolder = null;
+
+	public delegate void OnStatChanged(int value);
+	public OnStatChanged onStatChanged;
 
 	private List<int> modifiers = new List<int>();
 	#endregion
 
 	#region Unity Methods
+	public StatHolder GetStatHolder()
+	{ 
+		return statHolder;
+	}
+
 	public int GetValue()
 	{
 		int finalValue = baseValue;
@@ -32,6 +40,10 @@ public class Stat
 		if (modifier != 0)
 		{
 			modifiers.Add(modifier);
+			if (onStatChanged != null)
+			{
+				onStatChanged.Invoke(this.GetValue());
+			}
 		}
 	}
 
@@ -40,12 +52,11 @@ public class Stat
 		if (modifier != 0)
 		{
 			modifiers.Remove(modifier);
+			if (onStatChanged != null)
+			{
+				onStatChanged.Invoke(this.GetValue());
+			}
 		}
-	}
-
-	public void UpdateStatHolder()
-	{
-		statHolder.statValue = this.GetValue();
 	}
 	#endregion
 }

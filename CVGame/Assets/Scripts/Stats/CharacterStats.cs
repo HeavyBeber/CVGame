@@ -51,93 +51,110 @@ public class CharacterStats : MonoBehaviour
 	#region Unity Methods
 	void Start() {
 		EquipmentManager.instance.onEquipmentChanged += OnEquipmentChanged;
-    }
+
+		java.onStatChanged += java.GetStatHolder().UpdateUI;
+		cSharp.onStatChanged += cSharp.GetStatHolder().UpdateUI;
+		unity.onStatChanged += unity.GetStatHolder().UpdateUI;
+		spring.onStatChanged += spring.GetStatHolder().UpdateUI;
+		rest.onStatChanged += rest.GetStatHolder().UpdateUI;
+		docker.onStatChanged += docker.GetStatHolder().UpdateUI;
+		testing.onStatChanged += testing.GetStatHolder().UpdateUI;
+
+		angular.onStatChanged += angular.GetStatHolder().UpdateUI;
+		webLanguages.onStatChanged += webLanguages.GetStatHolder().UpdateUI;
+		electron.onStatChanged += electron.GetStatHolder().UpdateUI;
+
+		mongo.onStatChanged += mongo.GetStatHolder().UpdateUI;
+		sql.onStatChanged += sql.GetStatHolder().UpdateUI;
+
+		pcf.onStatChanged += pcf.GetStatHolder().UpdateUI;
+		maven.onStatChanged += maven.GetStatHolder().UpdateUI;
+		git.onStatChanged += git.GetStatHolder().UpdateUI;
+
+		atlassian.onStatChanged += atlassian.GetStatHolder().UpdateUI;
+		eclipse.onStatChanged += eclipse.GetStatHolder().UpdateUI;
+		vsCode.onStatChanged += vsCode.GetStatHolder().UpdateUI;
+		office.onStatChanged += office.GetStatHolder().UpdateUI;
+		adobe.onStatChanged += adobe.GetStatHolder().UpdateUI;
+		blender.onStatChanged += blender.GetStatHolder().UpdateUI;
+
+		agile.onStatChanged += agile.GetStatHolder().UpdateUI;
+		safe.onStatChanged += safe.GetStatHolder().UpdateUI;
+
+		english.onStatChanged += english.GetStatHolder().UpdateUI;
+		ageOfEmpire2DE.onStatChanged += ageOfEmpire2DE.GetStatHolder().UpdateUI;
+	}
 
 	void OnEquipmentChanged(Equipment newItem, Equipment oldItem)
 	{
 		if (newItem != null)
 		{
-			english.AddModifier(newItem.englishModifier);
-			ageOfEmpire2DE.AddModifier(newItem.ageOfEmpire2DEModifier);
 			java.AddModifier(newItem.javaModifier);
 			cSharp.AddModifier(newItem.cSharpModifier);
 			unity.AddModifier(newItem.unityModifier);
 			spring.AddModifier(newItem.springModifier);
-			testing.AddModifier(newItem.testingModifier);
 			rest.AddModifier(newItem.restModifier);
+			docker.AddModifier(newItem.dockerModifier);
+			testing.AddModifier(newItem.testingModifier);
+
+			mongo.AddModifier(newItem.mongoModifier);
+			sql.AddModifier(newItem.sqlModifier);
+
+			agile.AddModifier(newItem.agileModifier);
+			safe.AddModifier(newItem.safeModifier);
+
 			angular.AddModifier(newItem.angularModifier);
 			webLanguages.AddModifier(newItem.webLanguagesModifier);
 			electron.AddModifier(newItem.electronModifier);
-			mongo.AddModifier(newItem.mongoModifier);
-			sql.AddModifier(newItem.sqlModifier);
+
+			pcf.AddModifier(newItem.pcfModifier);
 			maven.AddModifier(newItem.mavenModifier);
 			git.AddModifier(newItem.gitModifier);
-			docker.AddModifier(newItem.dockerModifier);
-			pcf.AddModifier(newItem.pcfModifier);
+
 			atlassian.AddModifier(newItem.atlassianModifier);
 			eclipse.AddModifier(newItem.eclipseModifier);
 			vsCode.AddModifier(newItem.vsCodeModifier);
 			office.AddModifier(newItem.officeModifier);
 			adobe.AddModifier(newItem.adobeModifier);
 			blender.AddModifier(newItem.blenderModifier);
-			agile.AddModifier(newItem.agileModifier);
-			safe.AddModifier(newItem.safeModifier);
+
+			english.AddModifier(newItem.englishModifier);
+			ageOfEmpire2DE.AddModifier(newItem.ageOfEmpire2DEModifier);
 		}
 		if (oldItem != null)
 		{
-			english.RemoveModifier(oldItem.englishModifier);
-			ageOfEmpire2DE.RemoveModifier(oldItem.ageOfEmpire2DEModifier);
 			java.RemoveModifier(oldItem.javaModifier);
 			cSharp.RemoveModifier(oldItem.cSharpModifier);
 			unity.RemoveModifier(oldItem.unityModifier);
 			spring.RemoveModifier(oldItem.springModifier);
-			testing.RemoveModifier(oldItem.testingModifier);
 			rest.RemoveModifier(oldItem.restModifier);
+			docker.RemoveModifier(oldItem.dockerModifier);
+			testing.RemoveModifier(oldItem.testingModifier);
+
+			mongo.RemoveModifier(oldItem.mongoModifier);
+			sql.RemoveModifier(oldItem.sqlModifier);
+
+			agile.RemoveModifier(oldItem.agileModifier);
+			safe.RemoveModifier(oldItem.safeModifier);
+
 			angular.RemoveModifier(oldItem.angularModifier);
 			webLanguages.RemoveModifier(oldItem.webLanguagesModifier);
 			electron.RemoveModifier(oldItem.electronModifier);
-			mongo.RemoveModifier(oldItem.mongoModifier);
-			sql.RemoveModifier(oldItem.sqlModifier);
+
+			pcf.RemoveModifier(oldItem.pcfModifier);
 			maven.RemoveModifier(oldItem.mavenModifier);
 			git.RemoveModifier(oldItem.gitModifier);
-			docker.RemoveModifier(oldItem.dockerModifier);
-			pcf.RemoveModifier(oldItem.pcfModifier);
+
 			atlassian.RemoveModifier(oldItem.atlassianModifier);
 			eclipse.RemoveModifier(oldItem.eclipseModifier);
 			vsCode.RemoveModifier(oldItem.vsCodeModifier);
 			office.RemoveModifier(oldItem.officeModifier);
 			adobe.RemoveModifier(oldItem.adobeModifier);
 			blender.RemoveModifier(oldItem.blenderModifier);
-			agile.RemoveModifier(oldItem.agileModifier);
-			safe.RemoveModifier(oldItem.safeModifier);
+
+			english.RemoveModifier(oldItem.englishModifier);
+			ageOfEmpire2DE.RemoveModifier(oldItem.ageOfEmpire2DEModifier);
 		}
-
-		java.UpdateStatHolder();
-		cSharp.UpdateStatHolder();
-		unity.UpdateStatHolder();
-		spring.UpdateStatHolder();
-		testing.UpdateStatHolder();
-		rest.UpdateStatHolder();
-
-		angular.UpdateStatHolder();
-		webLanguages.UpdateStatHolder();
-		electron.UpdateStatHolder();
-
-		mongo.UpdateStatHolder();
-		sql.UpdateStatHolder();
-
-		maven.UpdateStatHolder();
-		git.UpdateStatHolder();
-
-		docker.UpdateStatHolder();
-		pcf.UpdateStatHolder();
-
-		atlassian.UpdateStatHolder();
-		eclipse.UpdateStatHolder();
-		vsCode.UpdateStatHolder();
-		office.UpdateStatHolder();
-		adobe.UpdateStatHolder();
-		blender.UpdateStatHolder();
 	}
 	#endregion
 }
