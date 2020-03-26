@@ -7,10 +7,6 @@ using UnityEngine;
 public class CharacterStats : MonoBehaviour
 {
 	#region Variables
-	#region Misc
-	public Stat english;
-	public Stat ageOfEmpire2DE;
-	#endregion
 	#region Backend
 	public Stat java;
 	public Stat cSharp;
@@ -20,14 +16,18 @@ public class CharacterStats : MonoBehaviour
 	public Stat docker;
 	public Stat testing;
 	#endregion
+	#region Database
+	public Stat mongo;
+	public Stat sql;
+	#endregion
+	#region Methodology
+	public Stat agile;
+	public Stat safe;
+	#endregion
 	#region Frontend
 	public Stat angular;
 	public Stat webLanguages;
 	public Stat electron;
-	#endregion
-	#region Database
-	public Stat mongo;
-	public Stat sql;
 	#endregion
 	#region ConfigManagement
 	public Stat pcf;
@@ -42,9 +42,9 @@ public class CharacterStats : MonoBehaviour
 	public Stat adobe;
 	public Stat blender;
 	#endregion
-	#region Methodology
-	public Stat agile;
-	public Stat safe;
+	#region Misc
+	public Stat english;
+	public Stat ageOfEmpire2DE;
 	#endregion
 	#endregion
 

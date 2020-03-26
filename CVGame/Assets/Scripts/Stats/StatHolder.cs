@@ -26,47 +26,29 @@ public class StatHolder : MonoBehaviour
 
 	public void UpdateUI(int value)
 	{
-		((Text)transform.Find("StatValue").GetComponent("Text")).text = value.ToString();
-		StartCoroutine(UpdateColor());
+		Text statValue = ((Text)transform.Find("StatValue").GetComponent("Text"));
+		statValue.text = value.ToString();
+		if (statValue.IsActive())
+		{
+			StartCoroutine(UpdateColor());
+		}
 	}
 
     IEnumerator UpdateColor()
     {
         float percent = 0;
 
-        while (percent <= 1)
-        {
-            percent += Time.deltaTime * 8;
-            float interpolation = (-percent * percent + percent) * 4;
-
-            ((Text)transform.Find("StatValue").GetComponent("Text")).color = Color.Lerp(originalColor, Color.red, interpolation);
-
-            yield return null;
-		}
-
-		percent = 0;
-
-		while (percent <= 1)
+		while (percent <= 2)
 		{
 			percent += Time.deltaTime * 8;
-			float interpolation = (-percent * percent + percent) * 4;
+			float interpolation = Mathf.Abs(Mathf.Sin(2f* Mathf.PI * percent));
 
 			((Text)transform.Find("StatValue").GetComponent("Text")).color = Color.Lerp(originalColor, Color.red, interpolation);
 
 			yield return null;
 		}
 
-		percent = 0;
-
-		while (percent <= 1)
-		{
-			percent += Time.deltaTime * 8;
-			float interpolation = (-percent * percent + percent) * 4;
-
-			((Text)transform.Find("StatValue").GetComponent("Text")).color = Color.Lerp(originalColor, Color.red, interpolation);
-
-			yield return null;
-		}
+		((Text)transform.Find("StatValue").GetComponent("Text")).color = originalColor;
 	}
     #endregion
 }
