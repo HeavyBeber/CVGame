@@ -22,6 +22,7 @@ public class EquipmentManager : MonoBehaviour
 	#region Variables
 	Equipment[] equipments;
 	Inventory inventory;
+	public Quests quests;
 
 	public delegate void OnEquipmentChanged(Equipment newItem, Equipment oldItem);
 	public OnEquipmentChanged onEquipmentChanged;
@@ -39,6 +40,7 @@ public class EquipmentManager : MonoBehaviour
 		int slotIndex = (int)equipment.slot;
 
 		Equipment oldItem = equipments[slotIndex];
+
 
 		if (oldItem != null)
 		{

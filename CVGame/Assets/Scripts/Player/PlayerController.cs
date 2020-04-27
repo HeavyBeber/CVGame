@@ -4,6 +4,8 @@ Author : Alexandre Bernard
 
 using UnityEngine.EventSystems;
 using UnityEngine;
+using System.Collections.Generic;
+using System.Collections;
 
 [RequireComponent(typeof(PlayerMotor))]
 public class PlayerController : MonoBehaviour
@@ -26,11 +28,13 @@ public class PlayerController : MonoBehaviour
         if (EventSystem.current.IsPointerOverGameObject())
             return;
 
+
+        Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+        RaycastHit hit;
+
         if (Input.GetMouseButtonDown(0))
         {
-            Ray ray = cam.ScreenPointToRay(Input.mousePosition);
-
-            if (Physics.Raycast(ray, out RaycastHit hit, 100, movementMask))
+            if (Physics.Raycast(ray, out hit, 100, movementMask))
             {
                 //Move player to what was hit
                 motor.MoveToPoint(hit.point);
@@ -42,9 +46,7 @@ public class PlayerController : MonoBehaviour
 
         if (Input.GetMouseButtonDown(1))
         {
-            Ray ray = cam.ScreenPointToRay(Input.mousePosition);
-
-            if (Physics.Raycast(ray, out RaycastHit hit, 100))
+            if (Physics.Raycast(ray, out hit, 100))
             {
                 Interactable interactable = hit.collider.GetComponent<Interactable>();
 
@@ -53,6 +55,18 @@ public class PlayerController : MonoBehaviour
                     SetFocus(interactable);
                 }
 
+            }
+        }
+
+        if (Physics.Raycast(ray, out hit, 100))
+        {
+            
+            Interactable interactable = hit.collider.GetComponent<Interactable>();
+
+            if (interactable != null && Time.time > interactable.nextFlashTime)
+            {
+                interactable.nextFlashTime = Time.time + 1;
+                StartCoroutine(FlashColor(interactable));
             }
         }
     }
@@ -77,5 +91,26 @@ public class PlayerController : MonoBehaviour
         focus = null;
         motor.StopFollowingTarget();
     }
-	#endregion
+
+    IEnumerator FlashColor(Interactable interactable)
+    {
+        float flashTime = 1;
+        float flashSpeed = 4;
+
+        Material mat = interactable.GetComponent<Renderer>().material;
+        Color initialColor = mat.color;
+        Color flashColor = Color.gray;
+
+        float flashTimer = 0;
+
+        while (flashTimer < flashTime)
+        {
+            mat.color = Color.Lerp(initialColor, flashColor, Mathf.PingPong(flashTimer * flashSpeed, 1));
+
+            flashTimer += Time.deltaTime;
+            yield return null;
+        }
+    }
+
+    #endregion
 }

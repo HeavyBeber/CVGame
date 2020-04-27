@@ -13,11 +13,13 @@ public class Interactable : MonoBehaviour
 	bool isFocused = false;
 	bool hasInteracted = false;
 	Transform player;
-	#endregion
 
-	#region Unity Methods
+    public float nextFlashTime { get; internal set; }
+    #endregion
 
-	public virtual void Interact()
+    #region Unity Methods
+
+    public virtual void Interact()
 	{
 		Debug.Log("Interact with : " + transform.name);
 	}

@@ -28,5 +28,10 @@ public class Collectable : Interactable
 		}
 		
 	}
+
+	private void Start()
+	{
+		transform.GetComponent<Rigidbody>().AddForce(Vector3.right*30);
+	}
 	#endregion
 }

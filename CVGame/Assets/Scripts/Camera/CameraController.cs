@@ -42,10 +42,12 @@ public class CameraController : MonoBehaviour
 
     void LateUpdate()
     {
-        transform.position = target.position - offset * currentZoom;
-        transform.LookAt(target.position + Vector3.up * pitch);
+        Vector3 position = target.position;
+        position.y = Mathf.Round(position.y/10)*10;
+        transform.position = position - offset * currentZoom;
+        transform.LookAt(position + Vector3.up * pitch);
 
-        transform.RotateAround(target.position, Vector3.up, currentYaw);
+        transform.RotateAround(position, Vector3.up, currentYaw);
     }
 	#endregion
 }
