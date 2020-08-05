@@ -12,6 +12,8 @@ public class Exam : Interactable
 	public Collectable equipmentReleased1;
 	public Collectable equipmentReleased2;
 	public GameObject puzzle;
+
+	public GameObject nextObject;
 	#endregion
 
 	#region Unity Methods
@@ -29,6 +31,8 @@ public class Exam : Interactable
 		Instantiate(equipmentReleased1, ejectionPoint1.transform.position, ejectionPoint1.transform.rotation);
 		equipmentReleased2.transform.position = ejectionPoint2.transform.position;
 		Instantiate(equipmentReleased2, ejectionPoint2.transform.position, ejectionPoint2.transform.rotation);
+
+		nextObject.SetActive(true);
 	}
 
 	#endregion

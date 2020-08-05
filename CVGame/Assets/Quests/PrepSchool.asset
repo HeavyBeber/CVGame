@@ -12,8 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05a90d9750494944db42c0254df59a18, type: 3}
   m_Name: PrepSchool
   m_EditorClassIdentifier: 
-  isActive: 0
-  isCompleted: 1
   title: Preparatory School
   text: "Sep 2010-Sep 2013 : \nLyc\xE9e Marcelin Berthelot,  6 Boulevard Maurice
     Berteaux 94100 St-Maur-des-Foss\xE9s.\n\n-Preparatory school MP (Math and Physics).\n-Discovery

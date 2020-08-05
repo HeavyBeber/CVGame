@@ -8,8 +8,6 @@ using UnityEngine;
 public class Quest : ScriptableObject
 {
     #region Variables
-    public bool isActive = false;
-    public bool isCompleted = false;
 
     public string title;
     [TextArea(15, 20)]

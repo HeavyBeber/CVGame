@@ -12,8 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05a90d9750494944db42c0254df59a18, type: 3}
   m_Name: ProjetLong
   m_EditorClassIdentifier: 
-  isActive: 0
-  isCompleted: 0
   title: School Project
   text: "January 2017 - March 2017  : \nITO,  6 Place du Village d'Entreprises, 31670
     Lab\xE8ge,\n\n-Product owner of a 4 people team.\n-Setup of git environement

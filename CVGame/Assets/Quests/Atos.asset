@@ -12,8 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05a90d9750494944db42c0254df59a18, type: 3}
   m_Name: Atos
   m_EditorClassIdentifier: 
-  isActive: 0
-  isCompleted: 0
   title: Graduated Internship
   text: "March 2017 - September 2017  : \nATOS,  6 Impasse Alice Guy, 31300 Toulouse.\n\n-SparkInData,
     cloud platform for geospatial treatments.\n-Creation of an API via swagger, python

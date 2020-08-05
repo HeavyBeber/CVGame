@@ -38,12 +38,11 @@ public class QuestSlot : MonoBehaviour, IPointerClickHandler, IPointerEnterHandl
 
     private void Start()
     {
-        this.gameObject.SetActive(quest.isActive);
+        this.gameObject.SetActive(false);
     }
 
     public void CompleteQuest()
     {
-        NormalColor = Color.green;
     }
 
     #endregion

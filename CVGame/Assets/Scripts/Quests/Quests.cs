@@ -3,6 +3,7 @@ Author : Alexandre Bernard
 **/
 
 using UnityEngine;
+using UnityEngine.Playables;
 using UnityEngine.UI;
 
 public class Quests : MonoBehaviour
@@ -12,6 +13,7 @@ public class Quests : MonoBehaviour
     public QuestSlot[] questSlots;
     int currentQuestIndex;
     public Text currentYear;
+    public GameObject notif;
     public GameObject finalScreen;
     #endregion
 
@@ -19,19 +21,19 @@ public class Quests : MonoBehaviour
     private void Start()
     {
         currentQuestIndex = 0;
+        questSlots[currentQuestIndex].gameObject.SetActive(true);
     }
 
     public void CompleteQuest()
     {
-        questSlots[currentQuestIndex].quest.isCompleted = true;
-        questSlots[currentQuestIndex].quest.isActive = false;
 
+        questSlots[currentQuestIndex].CompleteQuest();
         currentQuestIndex++;
         if (questSlots.Length > currentQuestIndex)
         {
             questSlots[currentQuestIndex].gameObject.SetActive(true);
-            questSlots[currentQuestIndex].quest.isActive = true;
             currentYear.text = questSlots[currentQuestIndex].quest.year;
+            notif.gameObject.SetActive(true);
         } 
         else
         {

@@ -12,8 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 05a90d9750494944db42c0254df59a18, type: 3}
   m_Name: CLS
   m_EditorClassIdentifier: 
-  isActive: 0
-  isCompleted: 0
   title: Graduated Internship
   text: "October 2017 - Janurary 2018  : \nCLS,  11 Rue Herm\xE8s, 31520 Ramonville-Saint-Agne.\n\n-Backend
     development of a web application.\n-Creation of new ressources and webservices.\n-Update

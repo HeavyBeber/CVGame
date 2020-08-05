@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8949149402433339308}
   - component: {fileID: 8949149402433339309}
   - component: {fileID: 8949149402433339305}
+  - component: {fileID: -3120344433722808238}
   m_Layer: 0
   m_Name: Frontend
   m_TagString: Untagged
@@ -28,7 +29,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8949149402433339310}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -1.5683899, y: 0.23750877, z: 8.1909485}
+  m_LocalPosition: {x: 67.72084, y: 25.26882, z: 41.541042}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_Children: []
   m_Father: {fileID: 0}
@@ -109,6 +110,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25faebf1e8fb259429dd4cdb147560af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 0.5
+  radius: 1.1
   interactionTransform: {fileID: 8949149402433339306}
   item: {fileID: 11400000, guid: f2abff3d671320344b05dd1ab02af5ad, type: 2}
+--- !u!54 &-3120344433722808238
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8949149402433339310}
+  serializedVersion: 2
+  m_Mass: 0.11
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0

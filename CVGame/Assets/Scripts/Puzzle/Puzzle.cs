@@ -6,7 +6,6 @@ using System;
 using System.Collections.Generic;
 using TMPro.Examples;
 using UnityEngine;
-using UnityEngine.WSA;
 
 public class Puzzle : MonoBehaviour
 {
@@ -15,10 +14,13 @@ public class Puzzle : MonoBehaviour
     public PuzzleTile[] puzzleTiles;
     int selected = NONE;
 
+    float completionTime;
+
     public delegate void OnComplete(float completionTime);
     public OnComplete onComplete;
 
-    float completionTime;
+
+    public Quests quests;
     #endregion
 
     #region Unity Methods
@@ -84,7 +86,7 @@ public class Puzzle : MonoBehaviour
         }
     }
 
-    Boolean CheckCompletion()
+    bool CheckCompletion()
     {
         for (int i = 0; i < 9; i++)
         {
@@ -100,6 +102,8 @@ public class Puzzle : MonoBehaviour
     {
         completionTime = Time.time;
         onComplete.Invoke(completionTime);
+        quests.CompleteQuest();
+        quests.CompleteQuest();
     }
 
 	#endregion
