@@ -12,6 +12,7 @@ public class BlackBoard : Interactable
 	public GameObject ejectionPoint;
 	public Collectable equipmentReleased;
 
+	public PlayerController playerController;
 	public GameObject nextObject;
 	#endregion
 
@@ -20,6 +21,7 @@ public class BlackBoard : Interactable
 	{
 		base.Interact();
 		blackboardUI.SetActive(true);
+		playerController.canMove = false;
 	}
 
 	public void CompleteQuest()
@@ -32,6 +34,7 @@ public class BlackBoard : Interactable
 
 		equipmentReleased.transform.position = ejectionPoint.transform.position;
 		Instantiate(equipmentReleased, ejectionPoint.transform.position, ejectionPoint.transform.rotation);
+		playerController.canMove = true;
 	}
 
 	#endregion

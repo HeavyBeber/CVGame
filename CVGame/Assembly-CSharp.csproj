@@ -94,6 +94,8 @@
      <Compile Include="Assets\#NVJOB Alpha Flashing UI\Example Scenes\Standard Assets\Effects\ImageEffects\Scripts\Twirl.cs" />
      <Compile Include="Assets\#NVJOB Alpha Flashing UI\Example Scenes\Standard Assets\Effects\ImageEffects\Scripts\VignetteAndChromaticAberration.cs" />
      <Compile Include="Assets\#NVJOB Alpha Flashing UI\Example Scenes\Standard Assets\Effects\ImageEffects\Scripts\Vortex.cs" />
+     <Compile Include="Assets\Scripts\BoxTower\BoxSpawner.cs" />
+     <Compile Include="Assets\Scripts\BoxTower\UnderGround.cs" />
      <Compile Include="Assets\Scripts\Camera\CameraController.cs" />
      <Compile Include="Assets\Scripts\GameManager\BlackBoardUI.cs" />
      <Compile Include="Assets\Scripts\GameManager\EquipmentManager.cs" />
@@ -102,6 +104,8 @@
      <Compile Include="Assets\Scripts\Interactable\BlackBoard.cs" />
      <Compile Include="Assets\Scripts\Interactable\Exam.cs" />
      <Compile Include="Assets\Scripts\Interactable\Interactable.cs" />
+     <Compile Include="Assets\Scripts\Interactable\Phone.cs" />
+     <Compile Include="Assets\Scripts\Interactable\Satellite.cs" />
      <Compile Include="Assets\Scripts\Inventory\Inventory.cs" />
      <Compile Include="Assets\Scripts\Inventory\InventoryUI.cs" />
      <Compile Include="Assets\Scripts\Inventory\ItemSlot.cs" />
@@ -110,7 +114,6 @@
      <Compile Include="Assets\Scripts\Items\Item.cs" />
      <Compile Include="Assets\Scripts\LightBulbs\LightBulb.cs" />
      <Compile Include="Assets\Scripts\LightBulbs\LightBulbs.cs" />
-     <Compile Include="Assets\Scripts\LightBulbs\Satellite.cs" />
      <Compile Include="Assets\Scripts\Player\CharacterAnimator.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerController.cs" />
      <Compile Include="Assets\Scripts\Player\PlayerMotor.cs" />

@@ -109,7 +109,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25faebf1e8fb259429dd4cdb147560af, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  radius: 1
+  radius: 1.2
   interactionTransform: {fileID: 7839695635542248101}
   item: {fileID: 11400000, guid: b9f1fbf3622c4e245a16c3700f3f5216, type: 2}
 --- !u!54 &3899560725255824049

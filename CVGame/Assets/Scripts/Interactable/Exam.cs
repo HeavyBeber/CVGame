@@ -13,6 +13,7 @@ public class Exam : Interactable
 	public Collectable equipmentReleased2;
 	public GameObject puzzle;
 
+	public PlayerController playerController;
 	public GameObject nextObject;
 	#endregion
 
@@ -22,6 +23,7 @@ public class Exam : Interactable
 	{
 		base.Interact();
 		puzzle.SetActive(true);
+		playerController.canMove = false;
 	}
 	 public void CompleteQuest()
 	{
@@ -33,6 +35,7 @@ public class Exam : Interactable
 		Instantiate(equipmentReleased2, ejectionPoint2.transform.position, ejectionPoint2.transform.rotation);
 
 		nextObject.SetActive(true);
+		playerController.canMove = true;
 	}
 
 	#endregion

@@ -11,7 +11,7 @@ public class Quests : MonoBehaviour
     
     #region Variables
     public QuestSlot[] questSlots;
-    int currentQuestIndex;
+    int currentQuestIndex = 0;
     public Text currentYear;
     public GameObject notif;
     public GameObject finalScreen;
@@ -20,13 +20,11 @@ public class Quests : MonoBehaviour
     #region Unity Methods
     private void Start()
     {
-        currentQuestIndex = 0;
-        questSlots[currentQuestIndex].gameObject.SetActive(true);
+        questSlots[0].gameObject.SetActive(true);
     }
 
     public void CompleteQuest()
     {
-
         questSlots[currentQuestIndex].CompleteQuest();
         currentQuestIndex++;
         if (questSlots.Length > currentQuestIndex)

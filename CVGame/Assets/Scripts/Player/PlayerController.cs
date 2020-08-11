@@ -13,6 +13,7 @@ public class PlayerController : MonoBehaviour
     #region Variables
     public LayerMask movementMask;
     public Interactable focus;
+    public bool canMove = true;
 
     Camera cam;
     PlayerMotor motor;
@@ -32,7 +33,7 @@ public class PlayerController : MonoBehaviour
         Ray ray = cam.ScreenPointToRay(Input.mousePosition);
         RaycastHit hit;
 
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && canMove)
         {
             if (Physics.Raycast(ray, out hit, 100, movementMask))
             {
@@ -44,7 +45,7 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetMouseButtonDown(1) && canMove)
         {
             if (Physics.Raycast(ray, out hit, 100))
             {
@@ -58,7 +59,7 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        if (Physics.Raycast(ray, out hit, 100))
+        if (Physics.Raycast(ray, out hit, 100) && canMove)
         {
             
             Interactable interactable = hit.collider.GetComponent<Interactable>();
@@ -99,7 +100,7 @@ public class PlayerController : MonoBehaviour
 
         Material mat = interactable.GetComponent<Renderer>().material;
         Color initialColor = mat.color;
-        Color flashColor = Color.gray;
+        Color flashColor = Color.green;
 
         float flashTimer = 0;
 

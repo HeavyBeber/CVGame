@@ -9,23 +9,28 @@ public class GeneralUI : MonoBehaviour
 	#region Variables
 	public GameObject inventoryUI;
 	public GameObject playerStatsUI;
-	public GameObject QuestUI;
+	public GameObject questUI;
+	public PlayerController playerController;
 	#endregion
 
 	#region Unity Methods
 	public void ToggleStatAndInventory()
 	{
-		QuestUI.SetActive(false);
+		questUI.SetActive(false);
 
 		inventoryUI.SetActive(!inventoryUI.activeSelf);
 		playerStatsUI.SetActive(!playerStatsUI.activeSelf);
+
+		playerController.canMove = !inventoryUI.activeSelf;
 	}
 	public void ToggleQuest()
 	{
-		QuestUI.SetActive(!QuestUI.activeSelf);
+		questUI.SetActive(!questUI.activeSelf);
 
 		inventoryUI.SetActive(false);
 		playerStatsUI.SetActive(false);
+
+		playerController.canMove = !questUI.activeSelf;
 	}
 
 	void Update()

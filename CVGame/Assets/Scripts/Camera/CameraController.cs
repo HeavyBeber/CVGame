@@ -19,7 +19,7 @@ public class CameraController : MonoBehaviour
     public float minZoom = 5f;
     public float maxZoom = 15f;
     
-    float currentZoom = 10f;
+    float currentZoom = 6f;
     #endregion
 
     #region Camera Rotation
